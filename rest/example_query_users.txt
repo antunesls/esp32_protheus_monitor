@@ -1,0 +1,120 @@
+Request:
+
+curl 'http://localhost:1236/webmonitor/webmnt?page=1&pageSize=10' \
+    -H 'Accept: application/json, text/plain, */*' \
+    -H 'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' \
+    -H 'Authorization: token: cab75bdb97b2d997f6d66e59a9e2a8e21afde4ee9d90fb61268fd4ef4f5f3dc84167d47f323b4669e0dabd20de4f76af1ea95c3f499d9c857c166bf2a1b4dce0' \
+    -H 'Cache-Control: no-cache' \
+    -H 'Connection: keep-alive' \
+    -H 'Pragma: no-cache' \
+    -H 'Referer: http://localhost:1236/webmonitor/main' \
+    -H 'Sec-Fetch-Dest: empty' \
+    -H 'Sec-Fetch-Mode: cors' \
+    -H 'Sec-Fetch-Site: same-origin' \
+    -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' \
+    -H 'sec-ch-ua: "Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"' \
+    -H 'sec-ch-ua-mobile: ?0' \
+    -H 'sec-ch-ua-platform: "Windows"'
+
+Response:
+
+{
+  "items": [
+    {
+      "id": "3e48e479e719db5800bbb78a7a279a74",
+      "userName": "LSPULSE",
+      "machineName": "THIS",
+      "threadID": 18796,
+      "server": "",
+      "function": "FWLSMANAGERPULSE",
+      "environment": "TOTVS12",
+      "dateTime": "Fri Jun  6 10:46:27 2025\n",
+      "timeUp": "00:02:45",
+      "instructions": 243,
+      "instructionsPS": 1,
+      "comments": "",
+      "memory": 0,
+      "sID": "",
+      "idCTREE": 0,
+      "threadType": "IPCJobThread",
+      "inactiveTime": ""
+    },
+    {
+      "id": "f3acc829eaf223364f1c84209a5ff64a",
+      "userName": "Administrador",
+      "machineName": "MARKVII",
+      "threadID": 24200,
+      "server": "MARKVII : 1234",
+      "function": "SIGAMDI",
+      "environment": "TOTVS12",
+      "dateTime": "Fri Jun  6 10:48:42 2025\n",
+      "timeUp": "00:00:30",
+      "instructions": 1589834,
+      "instructionsPS": 0,
+      "comments": "Emp :99/01Logado:Administrador             SIGACOM obj:Janela Principal",
+      "memory": 0,
+      "sID": "25024",
+      "idCTREE": 0,
+      "threadType": "SmartClient QT Windows (10.1.0.0)",
+      "inactiveTime": "00:00:10"
+    },
+    {
+      "id": "810193d258fe082737c5783224ff856d",
+      "userName": "Administrador",
+      "machineName": "MARKVII",
+      "threadID": 17348,
+      "server": "MARKVII : 1234",
+      "function": "MDIEXECUTE",
+      "environment": "TOTVS12",
+      "dateTime": "Fri Jun  6 10:49:00 2025\n",
+      "timeUp": "00:00:12",
+      "instructions": 647292,
+      "instructionsPS": 2615,
+      "comments": "Emp :99/01Logado:Administrador             SIGACOM obj:Janela Principal",
+      "memory": 0,
+      "sID": "11796",
+      "idCTREE": 0,
+      "threadType": "SmartClient QT Windows (10.1.0.0)",
+      "inactiveTime": "00:00:05"
+    },
+    {
+      "id": "a700c742003da07ce3c76cc05e8c98e3",
+      "userName": "antunesls_",
+      "machineName": "MARKVII",
+      "threadID": 13684,
+      "server": "",
+      "function": "MPNEWSUPDATE",
+      "environment": "TOTVS12",
+      "dateTime": "Fri Jun  6 10:48:43 2025\n",
+      "timeUp": "00:00:29",
+      "instructions": 463262,
+      "instructionsPS": 21224,
+      "comments": "",
+      "memory": 0,
+      "sID": "1348",
+      "idCTREE": 0,
+      "threadType": "JobThread",
+      "inactiveTime": ""
+    },
+    {
+      "id": "b0ba4ec2b10f09adb8dd1777a2797985",
+      "userName": "antunesls_",
+      "machineName": "MARKVII",
+      "threadID": 5248,
+      "server": "",
+      "function": "TPHUPDDMBS",
+      "environment": "TOTVS12",
+      "dateTime": "Fri Jun  6 10:49:03 2025\n",
+      "timeUp": "00:00:09",
+      "instructions": 10844,
+      "instructionsPS": 28667,
+      "comments": "|Emp :99/01Logado:             SIGAFAT Obj :",
+      "memory": 0,
+      "sID": "21572",
+      "idCTREE": 0,
+      "threadType": "JobThread",
+      "inactiveTime": ""
+    }
+  ],
+  "hasNext": false
+}

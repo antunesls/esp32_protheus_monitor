@@ -1,0 +1,26 @@
+Request:
+
+curl 'http://localhost:1236/webmonitor/webmnt/auth' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Origin: http://localhost:1236' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: http://localhost:1236/webmonitor/login' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: "Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  --data-raw '{"login":"admin","password":"admin","env":"TOTVS12"}'
+
+
+
+  Response:
+
+
+  { "token": "cab75bdb97b2d997f6d66e59a9e2a8e21afde4ee9d90fb61268fd4ef4f5f3dc84167d47f323b4669e0dabd20de4f76af1ea95c3f499d9c857c166bf2a1b4dce0"}
