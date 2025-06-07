@@ -31,6 +31,17 @@ This project aims to provide a quick and practical way to visualize the operatio
 - Wi-Fi network credentials
 - Access to a Protheus monitoring API or database endpoint
 
+## 📦 PlatformIO Dependencies
+
+This project uses the following PlatformIO dependencies (see `platformio.ini`):
+
+```
+lib_deps = 
+    tzapu/WiFiManager@^2.0.17
+    adafruit/Adafruit GFX Library@^1.12.1
+    adafruit/Adafruit SSD1306@^2.5.14
+```
+
 ## 🔌 How It Works
 
 1. The ESP32 connects to your Wi-Fi network.
