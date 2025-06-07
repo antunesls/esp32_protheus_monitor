@@ -26,6 +26,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, SCREEN_RESET);
 char nomeWifi[] = "Protheus Monitor WIFI";
 char senhaWifi[] = "12345678";
 
+int nDelay = 10; // Set the delay time in milliseconds
+
 void setup()
 {
   // put your setup code here, to run once:
@@ -41,23 +43,41 @@ void setup()
   display.print("Protheus");
   display.display();
 
+  
+
 }
 
 // put your main code here, to run repeatedly:
 void loop()
 {
-  delay(1000); // Delay for 1 second
+  delay(nDelay); // Delay for 1 second
   display.clearDisplay();
   display.setCursor(0, 0);
   display.print("Hello, World!");
   display.display();
   
   
-  delay(1000); // Delay for 1 second
+  delay(nDelay); // Delay for 1 second
   display.clearDisplay();
   display.setCursor(0, 0);
   display.print("Teste de Display");
   display.display();
+  
+
+  delay(nDelay); // Delay for 1 second
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("Projeto Protheus Monitor");
+  display.display();
+  
+
+  delay(nDelay); // Delay for 1 second
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.print("Projeto de Lucas , Jean  e Gustavo");
+  display.display();
+
+  nDelay += 10; // Increase the delay time by 10 milliseconds
   
 
 }
