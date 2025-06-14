@@ -13,6 +13,8 @@
 
 #define PIN_AP 23
 
+#define PIN_BUZZER 20
+
 #define APERTADO LOW
 
 #define SCREEN_WIDTH 128
@@ -43,6 +45,8 @@ void setup()
   display.print("Protheus");
   display.display();
 
+  pinMode(PIN_BUZZER, OUTPUT);
+
   
 
 }
@@ -55,6 +59,8 @@ void loop()
   display.setCursor(0, 0);
   display.print("Hello, World!");
   display.display();
+
+  digitalWrite(PIN_BUZZER, HIGH); // Activate the buzzer
   
   
   delay(nDelay); // Delay for 1 second
@@ -62,6 +68,8 @@ void loop()
   display.setCursor(0, 0);
   display.print("Teste de Display");
   display.display();
+
+  digitalWrite(PIN_BUZZER, LOW); // Deactivate the buzzer
   
 
   delay(nDelay); // Delay for 1 second
@@ -70,12 +78,16 @@ void loop()
   display.print("Projeto Protheus Monitor");
   display.display();
   
+  digitalWrite(PIN_BUZZER, HIGH); // Activate the buzzer
 
   delay(nDelay); // Delay for 1 second
   display.clearDisplay();
   display.setCursor(0, 0);
   display.print("Projeto de Lucas , Jean  e Gustavo");
   display.display();
+
+  
+  digitalWrite(PIN_BUZZER, LOW); // Deactivate the buzzer
 
   nDelay += 10; // Increase the delay time by 10 milliseconds
   

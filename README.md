@@ -31,6 +31,10 @@ This project aims to provide a quick and practical way to visualize the operatio
 - Wi-Fi network credentials
 - Access to a Protheus monitoring API or database endpoint
 
+## 🗺️ Project Flow
+
+You can view the project flow diagram on Miro: [ESP32 Protheus Monitor Flow](https://miro.com/app/board/uXjVIpw0MfU=/?share_link_id=585686759009)
+
 ## 📦 PlatformIO Dependencies
 
 This project uses the following PlatformIO dependencies (see `platformio.ini`):
