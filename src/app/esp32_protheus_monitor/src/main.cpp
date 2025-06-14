@@ -21,14 +21,16 @@
 #define SCREEN_HEIGHT 64
 #define SCREEN_ADDRESS 0x3C
 #define SCREEN_RESET -1 // Reset pin not used, set to -1
-#define ROTATION 0 // No rotation
+#define ROTATION 0      // No rotation
+
+#include "logo.h"
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, SCREEN_RESET);
 
 char nomeWifi[] = "Protheus Monitor WIFI";
 char senhaWifi[] = "12345678";
 
-int nDelay = 10; // Set the delay time in milliseconds
+int nDelay = 10000; // Set the delay time in milliseconds
 
 void setup()
 {
@@ -37,59 +39,38 @@ void setup()
 
   Wire.begin(I2C_SDA, I2C_SCL);
 
-  display.begin(SSD1306_SWITCHCAPVCC,SCREEN_ADDRESS);
+  // Initialize the display and show the logo
+  display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS);
+  display.setTextColor(WHITE);
   display.clearDisplay();
-  display.setTextSize(2);
-  display.setTextColor(SSD1306_WHITE);
   display.setCursor(0, 0);
-  display.print("Protheus");
+  display.drawBitmap(0, 0, epd_bitmap_logo_esp32_protheus_monitor, 128, 64, WHITE);
   display.display();
 
+  delay(5000); // Wait for 2 seconds to display the logo
+
+  display.clearDisplay();
+
   pinMode(PIN_BUZZER, OUTPUT);
-
-  
-
 }
 
 // put your main code here, to run repeatedly:
 void loop()
 {
-  delay(nDelay); // Delay for 1 second
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.print("Hello, World!");
-  display.display();
 
   digitalWrite(PIN_BUZZER, HIGH); // Activate the buzzer
-  
-  
-  delay(nDelay); // Delay for 1 second
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.print("Teste de Display");
+
+  display.setCursor(0, 0); // Parte amarela (topo)
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.println("MONITOR PROTHEUS");
+
+  display.setCursor(0, 16); // Parte azul
+  display.setTextSize(1);
+  display.println("Licencas:  12");
+  display.println("Usuarios:  4");
+  display.println("CPU:      38%");
   display.display();
 
-  digitalWrite(PIN_BUZZER, LOW); // Deactivate the buzzer
-  
-
-  delay(nDelay); // Delay for 1 second
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.print("Projeto Protheus Monitor");
-  display.display();
-  
-  digitalWrite(PIN_BUZZER, HIGH); // Activate the buzzer
-
-  delay(nDelay); // Delay for 1 second
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.print("Projeto de Lucas , Jean  e Gustavo");
-  display.display();
-
-  
-  digitalWrite(PIN_BUZZER, LOW); // Deactivate the buzzer
-
-  nDelay += 10; // Increase the delay time by 10 milliseconds
-  
-
+  delay(1000); // Delay for 1 second
 }
