@@ -23,6 +23,14 @@ This project aims to provide a quick and practical way to visualize the operatio
 - USB Cable for power/programming
 - Optional: Buzzer or LED for alerts
 
+### Pinout
+
+The main pins used in this project are:
+- I2C_SDA: 8
+- I2C_SCL: 9
+- PIN_AP: 23
+- PIN_BUZZER: 20
+
 ## 💻 Software Requirements
 
 - PlatformIO (recommended) or Arduino IDE
@@ -59,6 +67,11 @@ lib_deps =
    git clone https://github.com/yourusername/esp32-protheus-monitor.git
    ```
 2. Open the project folder in [PlatformIO](https://platformio.org/install).
+3. Make sure you have the ESP32-S3 board selected in your `platformio.ini`.
+4. Connect your ESP32-S3 board to your computer.
+5. Build and upload the firmware using PlatformIO (check the "Upload" button or run `pio run --target upload`).
+
+For a detailed PlatformIO getting started guide, see: [PlatformIO Get Started](https://docs.platformio.org/en/latest/introduction/quickstart.html)
 3. Make sure you have the ESP32-S3 board selected in your `platformio.ini`.
 4. Connect your ESP32-S3 board to your computer.
 5. Build and upload the firmware using PlatformIO (check the "Upload" button or run `pio run --target upload`).
