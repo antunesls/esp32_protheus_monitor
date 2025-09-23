@@ -9,11 +9,9 @@
 
 #include "config.h"
 #include "logo.h"
-#include "utils.h"
 
-// Definições de Hardware (usando config.h)
-#define I2C_SDA I2C_SDA_PIN
-#define I2C_SCL I2C_SCL_PIN
+// Usar os pinos já definidos no ESP32-S3-BOX
+// I2C_SDA = 8, I2C_SCL = 18 (definidos no board)
 #define PIN_AP BUTTON_RESET_PIN
 #define PIN_BUZZER BUZZER_PIN
 #define BUTTON_PRESSED LOW
@@ -36,6 +34,9 @@ struct ProtheusData {
   unsigned long systemUptime;
   String lastError;
 };
+
+// Incluir utils.h após definir ProtheusData
+#include "utils.h"
 
 // Objetos globais
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, SCREEN_RESET);
@@ -65,6 +66,17 @@ void initDisplay() {
   display.display();
   delay(LOGO_DISPLAY_TIME);
   display.clearDisplay();
+}
+
+// Função para gerar dados simulados
+void generateSimulatedData(ProtheusData* data) {
+  data->totalLicenses = SIM_TOTAL_LICENSES;
+  data->usedLicenses = random(SIM_MIN_USED_LICENSES, SIM_MAX_USED_LICENSES + 1);
+  data->activeUsers = random(SIM_MIN_USERS, SIM_MAX_USERS + 1);
+  data->cpuUsage = random(SIM_MIN_CPU * 10, SIM_MAX_CPU * 10) / 10.0;
+  data->memoryUsage = random(SIM_MIN_MEMORY * 10, SIM_MAX_MEMORY * 10) / 10.0;
+  data->isOnline = true;
+  data->lastUpdate = millis();
 }
 
 // Função para configurar WiFi
@@ -155,7 +167,7 @@ bool fetchProtheusData() {
     // Verificar se é JSON válido
     if (isValidJson(payload)) {
       // Parse JSON response
-      DynamicJsonDocument doc(1024);
+      JsonDocument doc;
       DeserializationError error = deserializeJson(doc, payload);
       
       if (!error) {
@@ -378,7 +390,8 @@ void setup() {
 
   systemStartTime = millis();
 
-  // Inicializar I2C
+  // Inicializar I2C com pinos do ESP32-S3-BOX
+  // I2C_SDA = 8, I2C_SCL = 18 (já definidos no board)
   Wire.begin(I2C_SDA, I2C_SCL);
   
   // Configurar pinos

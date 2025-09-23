@@ -91,15 +91,7 @@ float calculatePercentage(int used, int total) {
  * @brief Gera dados simulados para testes
  * @param data Ponteiro para estrutura de dados do Protheus
  */
-void generateSimulatedData(struct ProtheusData* data) {
-  data->totalLicenses = SIM_TOTAL_LICENSES;
-  data->usedLicenses = random(SIM_MIN_USED_LICENSES, SIM_MAX_USED_LICENSES + 1);
-  data->activeUsers = random(SIM_MIN_USERS, SIM_MAX_USERS + 1);
-  data->cpuUsage = random(SIM_MIN_CPU * 10, SIM_MAX_CPU * 10) / 10.0;
-  data->memoryUsage = random(SIM_MIN_MEMORY * 10, SIM_MAX_MEMORY * 10) / 10.0;
-  data->isOnline = true;
-  data->lastUpdate = millis();
-}
+// Função movida para main.cpp para evitar dependência circular
 
 /**
  * @brief Desenha uma barra de progresso no display
@@ -143,9 +135,10 @@ void centerText(Adafruit_SSD1306& display, const char* text, int y, int textSize
  * @return true se parecer ser JSON válido
  */
 bool isValidJson(const String& str) {
-  str.trim();
-  return (str.startsWith("{") && str.endsWith("}")) || 
-         (str.startsWith("[") && str.endsWith("]"));
+  String trimmedStr = str;
+  trimmedStr.trim();
+  return (trimmedStr.startsWith("{") && trimmedStr.endsWith("}")) || 
+         (trimmedStr.startsWith("[") && trimmedStr.endsWith("]"));
 }
 
 /**

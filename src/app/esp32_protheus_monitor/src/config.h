@@ -75,15 +75,15 @@
 // CONFIGURAÇÕES DO HARDWARE
 // =====================================================================
 
-// Pinos I2C para o display
-#define I2C_SDA_PIN 8
-#define I2C_SCL_PIN 9
+// Pinos I2C para o display (ESP32-S3-BOX built-in)
+// Nota: O ESP32-S3-BOX já define I2C_SDA=8 e I2C_SCL=18
+// Usaremos os pinos padrão do board
 
 // Pino do botão para reset WiFi
-#define BUTTON_RESET_PIN 42
+#define BUTTON_RESET_PIN 0  // Botão BOOT do ESP32-S3-BOX
 
-// Pino do buzzer
-#define BUZZER_PIN 20
+// Pino do buzzer (ajustar conforme hardware)
+#define BUZZER_PIN 2
 
 // Configurações do display OLED
 #define OLED_WIDTH 128
